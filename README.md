@@ -18,10 +18,10 @@ Front-end :Streamlit
 Backend: Flask,GraphQL,sql
 
 ### Step 1 : I have created an api endpoint with the name 'gql'.
-app.add_url_rule(
-    "/gql",
-    view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
-)
+    app.add_url_rule(
+        "/gql",
+        view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
+    )
 
 ### step 2: I have converted the .csv file to sql file and deployed it in freesqlhosting.com
     def get_db_connection():
