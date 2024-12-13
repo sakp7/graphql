@@ -23,29 +23,29 @@ app.add_url_rule(
     view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
 )
 
-### step 2: I have converted the .csv file to sql file and deployed it in freesqlhosting.com.
-def get_db_connection():
-    connection = mysql.connector.connect(
-        host=MYSQL_HOST,
-        user=MYSQL_USER,
-        password=MYSQL_PASSWORD,
-        database=MYSQL_DBNAME,
-        port=MYSQL_PORT
-    )
-    return connection
+### step 2: I have converted the .csv file to sql file and deployed it in freesqlhosting.com
+    def get_db_connection():
+        connection = mysql.connector.connect(
+            host=MYSQL_HOST,
+            user=MYSQL_USER,
+            password=MYSQL_PASSWORD,
+            database=MYSQL_DBNAME,
+            port=MYSQL_PORT
+        )
+        return connection
 
 ### step 3:I have created to objects using graphene(GraphQl library for python)
-class Bank(graphene.ObjectType):
-    name = graphene.String()
-
-class Branch(graphene.ObjectType):
-    branch = graphene.String()
-    ifsc = graphene.String()
-    bank = graphene.Field(Bank)
-    id = graphene.Int()
+    class Bank(graphene.ObjectType):
+        name = graphene.String()
+    
+    class Branch(graphene.ObjectType):
+        branch = graphene.String()
+        ifsc = graphene.String()
+        bank = graphene.Field(Bank)
+        id = graphene.Int()
 ### step 4:Created multiple queries and tested the code
-class Query(graphene.ObjectType):
-    branches = graphene.List(Branch)
+    class Query(graphene.ObjectType):
+        branches = graphene.List(Branch)
 
     def resolve_branches(self, info):
         connection = get_db_connection()
