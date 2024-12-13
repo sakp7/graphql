@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_graphql import GraphQLView
+from graphene_flask import GraphQLView
 import graphene
 import mysql.connector
 # MySQL database credentials (replace with your actual credentials)
