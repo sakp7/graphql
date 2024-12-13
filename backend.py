@@ -2,10 +2,10 @@ from flask import Flask
 from flask_graphql import GraphQLView
 import graphene
 import mysql.connector
-MYSQL_HOST = 'sql12.freemysqlhosting.net'  
-MYSQL_USER = 'sql12751617' 
-MYSQL_PASSWORD = '5pdhPY2KtY' 
-MYSQL_DBNAME = 'sql12751617' 
+MYSQL_HOST = '123.freemysqlhosting.net'  
+MYSQL_USER = '123456' 
+MYSQL_PASSWORD = '123456' 
+MYSQL_DBNAME = '123456' 
 MYSQL_PORT = 3306  
 
 def get_db_connection():
