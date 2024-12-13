@@ -34,7 +34,7 @@ Backend: Flask,GraphQL,sql
         )
         return connection
 
-### step 3:I have created to objects using graphene(GraphQl library for python)
+### step 3:I have created two objects using graphene(GraphQl library for python)
     class Bank(graphene.ObjectType):
         name = graphene.String()
     
