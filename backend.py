@@ -1,5 +1,5 @@
 from flask import Flask
-from graphene_flask import GraphQLView
+from flask_graphql import GraphQLView
 import graphene
 import mysql.connector
 # MySQL database credentials (replace with your actual credentials)
@@ -49,9 +49,9 @@ schema = graphene.Schema(query=Query)
 
 app = Flask(__name__)
 app.add_url_rule(
-    "/graphql", view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True)
+    "/gql",
+    view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
 )
-
 
 if __name__ == "__main__":
     app.run(debug=True)
