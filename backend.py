@@ -49,9 +49,9 @@ schema = graphene.Schema(query=Query)
 
 app = Flask(__name__)
 app.add_url_rule(
-    "/gql",
-    view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True),
+    "/graphql", view_func=GraphQLView.as_view("graphql", schema=schema, graphiql=True)
 )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
